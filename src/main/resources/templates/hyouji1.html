@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<herd></herd>
+		
+		
+	<h3>登録された一覧</h3>
+	
+
+	<body>
+    <h3>登録されたアドレス一覧</h3>
+
+    <div th:if="${list!=null and !list.empty}">
+        <table class="table table-striped">
+            <thead>
+                
+                <th>名前</th>
+                <th>残高</th>
+
+                <th role="action"></th>
+            </thead>
+            <tbody>
+                <tr class="align-middle" th:each="account, stat : ${list}" th:object="${account}">
+                    <td th:text="*{name}"></td>
+                    <td th:text="*{blance}"></td>
+                </tr>
+                <tr class="align-middle" th:each="account, stat : ${list2}" th:object"${account}">
+                    <td th:text="*{japanese}"></td>
+                </tr>
+                
+                </tr>
+                
+                
+                <a href="/add/">トップページに戻る</a>
+    
+
+            </tbody>
+            
+    
+        </table>
+    </div>
+    <div th:unless="${list!=null and !list.empty}">
+        <div class="alert alert-danger" role="alert">
+            データなし
+        </div>
+    </div>
+</body>
+    </div>
+    
+    </html>
